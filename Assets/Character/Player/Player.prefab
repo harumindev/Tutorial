@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3996546717613690147}
   - component: {fileID: 6461560642113547625}
   - component: {fileID: 132083646720825719}
+  - component: {fileID: 3077665770637369652}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -120,7 +121,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f7eedb9a83ab243ab0466483d70808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 12
+  walkSpeed: 5
+  runSpeed: 10
+  _isMoving: 0
+  _isRunning: 0
+  _isFacingRight: 1
 --- !u!114 &132083646720825719
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,8 +215,45 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: c3d762b4-0790-4d10-948c-9972157eca01
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6461560642113547625}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: OnRun
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 317f75ef-451e-483f-a242-ee0869a70a1b
+    m_ActionName: Player/Run[/Keyboard/leftShift]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &3077665770637369652
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545156859035705119}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc14e1a204ef95b45a056902e1193b47, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

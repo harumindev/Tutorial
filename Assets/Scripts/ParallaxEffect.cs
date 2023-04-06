@@ -14,7 +14,7 @@ public class ParallaxEffect : MonoBehaviour
     float startingZ;
 
     // Distance that the camera has moved from the starting position of the parallax object
-    Vector2 canMoveSinceStart => (Vector2)cam.transform.position - startingPosition;
+    Vector2 camMoveSinceStart => (Vector2)cam.transform.position - startingPosition;
 
     float zDistanceFromTarget => transform.position.z - followTarget.position.z;
 
@@ -34,7 +34,7 @@ public class ParallaxEffect : MonoBehaviour
     void Update()
     {
         // When the target moves, move the parallax object the same distance time a multiplier
-        Vector2 newPosition = startingPosition + canMoveSinceStart * parallaxFactor;
+        Vector2 newPosition = startingPosition + camMoveSinceStart * parallaxFactor;
 
         // The X/Y position changes based on target travel speed time the parallax factor, but Z stays comsistent
         transform.position = new Vector3(newPosition.x, newPosition.y, startingZ); 
